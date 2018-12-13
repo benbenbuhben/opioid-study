@@ -115,3 +115,8 @@ venv.bak/
 
 # data
 curriculum/class-06/API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
