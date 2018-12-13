@@ -11,6 +11,10 @@ django-registration = "*"
 pandas = "*"
 numpy = "*"
 sqlalchemy = "*"
+django-cors-headers = "*"
+ipykernel = "*"
+jupyter = "*"
+ipython = "*"
 
 [dev-packages]
 
