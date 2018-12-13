@@ -28,7 +28,27 @@ df['val'] = df['val'].fillna(0)
 df['upper'] = df['upper'].fillna(0)
 df['lower'] = df['lower'].fillna(0)
 
-# df = df.sort_values(by=['usd_pledged'], ascending=False)
+df_world = pd.DataFrame(columns=['id', 'location_id', 'location_name', 'sex_id' 'sex_name', 'year', 'val', 'upper', 'lower'])
+
+index = df.count()['location_id'] + 1
+
+for year in df['year'].unique():
+    for sex in df['sex_id'].unique():
+        df_world.at[index, 'location_id'] = int(0)
+        df_world.at[index, 'location_name'] = 'World'
+        df_world.at[index, 'sex_id'] = int(sex)
+        df_world.at[index, 'sex_name'] = 'Male' if sex == 1 else 'Female' if sex == 2 else 'Both'
+        df_world.at[index, 'year'] = int(year)
+        df_world.at[index, 'val'] = df[(df['sex_id'] == sex) & (df['year'] == year)]['val'].mean()
+        df_world.at[index, 'upper'] = df[(df['sex_id'] == sex) & (df['year'] == year)]['upper'].mean()
+        df_world.at[index, 'lower'] = df[(df['sex_id'] == sex) & (df['year'] == year)]['lower'].mean()
+        index += 1
+
+# import pdb; pdb.set_trace()
+
+df = df.append(df_world, sort=True)
+
+
 
 db_protocol = 'postgresql'
 db_host = os.environ.get('DB_HOST', '')
@@ -36,16 +56,12 @@ db_user = os.environ.get('DB_USER', '')
 db_password = os.environ.get('DB_PASSWORD', '')
 db_name = os.environ.get('DB_NAME', '')
 
-print('Prior to create engine')
-# print(df)
+
 
 engine = create_engine('{}://{}:{}@{}:5432/{}'.format(
     db_protocol, db_user, db_password, db_host, db_name
 ))
 
-print('Prior to df.to_sql command')
-print('{}://{}:{}@{}:5432/{}'.format(
-    db_protocol, db_user, db_password, db_host, db_name
-))
 
-df.to_sql('opioid_api_opioids', engine, if_exists='append', index=False)
+
+df.to_sql('opioid_api_opioids', engine, if_exists='replace', index=False)
