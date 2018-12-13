@@ -5,6 +5,7 @@ ENV/
 .vscode
 .idea
 .DS_Store
+install.txt
 
 
 # Byte-compiled / optimized / DLL files
