@@ -7,7 +7,7 @@
 
 **Live Site**: http://ihme-opioid-study.s3-website-us-west-2.amazonaws.com/
 
-**Live Server**: http://ihme-env.22u24hwmvk.us-west-2.elasticbeanstalk.com
+**Live Server**: http://ihme-env.22u24hwmvk.us-west-2.elasticbeanstalk.com/api/v1/world
 
 **Front-end GitHub Repo:** https://github.com/benbenbuhben/client_opioid_study
 ___
