@@ -178,6 +178,6 @@ ___
 
 12-11-2018 2:22pm - Proof of life for /api/v1/countries endpoints.
 
-12-14-2018 7:38pm - Deployed to AWS Elastic Beanstalk.
+12-13-2018 12:38pm - Deployed to AWS Elastic Beanstalk.
 
 [Back to top](#top)
