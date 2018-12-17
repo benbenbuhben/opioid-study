@@ -38,7 +38,7 @@ ___
 
 <a id="clone"></a>
 
-### Clone this repo and setup database (using Python 3.6, pipenv, and psql)
+### Clone this repo and set up database (using Python 3.6, pipenv, and psql)
 
 In a terminal instance:
 
