@@ -77,7 +77,7 @@ ___
 
 **GET** `country/<int:country_id>`
 
-***Client-side Usage:*** Called when a user clicks a specific country. Data that is sent back is used to dynamically rendered infographic charts.
+***Client-side Usage:*** Called when a user clicks a specific country. Data that is sent back is used to dynamically render infographic charts.
 
 ***Example Response:***
 
@@ -121,7 +121,7 @@ ___
 
 **GET** `/api/v1/world`
 
-***Client-side Usage:*** Called on page load an used to pass world average data to line graph.
+***Client-side Usage:*** Called on page load and used to pass world average data to line graph.
 
 ***Example Response:***
 
