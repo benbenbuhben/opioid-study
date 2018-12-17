@@ -44,7 +44,8 @@ In a terminal instance:
 
 1. ```git clone https://github.com/benbenbuhben/opioid_study_api.git```
 2. ```cd opioid_study_api/```
-3. ```pipenv install```
+3. ```pipenv shell```
+4. ```pipenv install```
 
 In a separate terminal instance:
 
