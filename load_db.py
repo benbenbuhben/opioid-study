@@ -27,7 +27,16 @@ df['year'] = df['year'].fillna(0)
 df['val'] = df['val'].fillna(0)
 df['upper'] = df['upper'].fillna(0)
 df['lower'] = df['lower'].fillna(0)
+df['rank'] = 0
 
+# Let's find the val rank for each year/sex per country.
+for year in df['year'].unique():
+    for sex in df['sex_id'].unique():
+        df_current = df[(df['sex_id']==sex) & (df['year']==year)].sort_values(by=['val'], ascending=False).reset_index()
+        for index, row in df_current.iterrows():
+            df.at[row['index'], 'rank'] = index + 1
+
+# The following block appends world data (annual means) to the dataset
 df_world = pd.DataFrame(columns=['id', 'location_id', 'location_name', 'sex_id' 'sex_name', 'year', 'val', 'upper', 'lower'])
 
 index = df.count()['location_id'] + 1
