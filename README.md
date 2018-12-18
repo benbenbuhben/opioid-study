@@ -7,7 +7,7 @@
 
 **Live Site**: http://ihme-opioid-study.s3-website-us-west-2.amazonaws.com/
 
-**Live Server**: http://ihme-env.22u24hwmvk.us-west-2.elasticbeanstalk.com
+**Live Server**: http://ihme-env.22u24hwmvk.us-west-2.elasticbeanstalk.com/api/v1/world
 
 **Front-end GitHub Repo:** https://github.com/benbenbuhben/client_opioid_study
 ___
@@ -38,13 +38,14 @@ ___
 
 <a id="clone"></a>
 
-### Clone this repo and setup database (using Python 3.6, pipenv, and psql)
+### Clone this repo and set up database (using Python 3.6, pipenv, and psql)
 
 In a terminal instance:
 
 1. ```git clone https://github.com/benbenbuhben/opioid_study_api.git```
 2. ```cd opioid_study_api/```
-3. ```pipenv install```
+3. ```pipenv shell```
+4. ```pipenv install```
 
 In a separate terminal instance:
 
@@ -76,7 +77,7 @@ ___
 
 **GET** `country/<int:country_id>`
 
-***Client-side Usage:*** Called when a user clicks a specific country. Data that is sent back is used to dynamically rendered infographic charts.
+***Client-side Usage:*** Called when a user clicks a specific country. Data that is sent back is used to dynamically render infographic charts.
 
 ***Example Response:***
 
@@ -120,7 +121,7 @@ ___
 
 **GET** `/api/v1/world`
 
-***Client-side Usage:*** Called on page load an used to pass world average data to line graph.
+***Client-side Usage:*** Called on page load and used to pass world average data to line graph.
 
 ***Example Response:***
 
@@ -178,6 +179,6 @@ ___
 
 12-11-2018 2:22pm - Proof of life for /api/v1/countries endpoints.
 
-12-14-2018 7:38pm - Deployed to AWS Elastic Beanstalk.
+12-13-2018 12:38pm - Deployed to AWS Elastic Beanstalk.
 
 [Back to top](#top)
