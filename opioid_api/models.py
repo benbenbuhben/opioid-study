@@ -12,7 +12,7 @@ class Opioids(models.Model):
     val = models.DecimalField(max_digits=25, decimal_places=20)
     upper = models.DecimalField(max_digits=25, decimal_places=20)
     lower = models.DecimalField(max_digits=25, decimal_places=20)
-    # rank = models.IntegerField()
+    rank = models.IntegerField()
 
     def __str__(self):
         return '{}'.format(self.name)
