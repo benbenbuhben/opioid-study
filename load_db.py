@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import os
 from decimal import *
+from decouple import config
 
 
 csv_data = pd.read_csv(
@@ -144,10 +145,10 @@ for country in df['location_name'].unique():
         df.at[df_current.index[0]+2, 'sex_percentage'] = female_percentage
 
 db_protocol = 'postgresql'
-db_host = os.environ.get('DB_HOST', '')
-db_user = os.environ.get('DB_USER', '')
-db_password = os.environ.get('DB_PASSWORD', '')
-db_name = os.environ.get('DB_NAME', '')
+db_host = config('DB_HOST', '')
+db_user = config('DB_USER', '')
+db_password = config('DB_PASSWORD', '')
+db_name = config('DB_NAME', '')
 
 engine = create_engine('{}://{}:{}@{}:5432/{}'.format(
     db_protocol, db_user, db_password, db_host, db_name
