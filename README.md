@@ -54,7 +54,9 @@ In a separate terminal instance:
 
 Back in the main terminal instance:
 
-1. ```manage.py migrate```
+1. ```cp .env.sample .env``` and set appropriate environmental variables in `.env`
+2. ```python3 manage.py makemigrations```
+3. ```python3 manage.py migrate```
 
 <a id="seed"></a>
 
